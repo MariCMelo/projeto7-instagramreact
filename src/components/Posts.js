@@ -5,7 +5,7 @@ export default function Posts(){
     ]
     
     return(
-        <div className="posts">
+        <div  className="posts">
             {posts.map((post) => (
                 <Post
                     key={post.account}
@@ -23,10 +23,10 @@ export default function Posts(){
 }
     function Post(props){
         return(
-            <div className="post">
+            <div data-test="post" className="post">
             <div className="topo">
               <div className="usuario">
-                <img src={props.avatarImage} alt={props.avatarAlt}/>
+                <img data-test="post-image" src={props.avatarImage} alt={props.avatarAlt}/>
                 {props.account}
             </div>
               <div className="acoes">
@@ -41,19 +41,19 @@ export default function Posts(){
             <div className="fundo">
               <div className="acoes">
                 <div>
-                  <ion-icon name="heart-outline"></ion-icon>
+                  <ion-icon data-test="like-post" name="heart-outline"></ion-icon>
                   <ion-icon name="chatbubble-outline"></ion-icon>
                   <ion-icon name="paper-plane-outline"></ion-icon>
                 </div>
                 <div>
-                  <ion-icon name="bookmark-outline"></ion-icon>
+                  <ion-icon data-test="save-post" name="bookmark-outline"></ion-icon>
                 </div>
               </div>
 
               <div className="curtidas">
                 <img src={props.likeImage} alt={props.likeAlt}/>
                 <div className="texto">
-                  Curtido por <strong>{props.accountLike}</strong> e <strong>outras {props.likeNumber} pessoas</strong>
+                  Curtido por <strong>{props.accountLike}</strong> e <strong data-test="likes-number">outras {props.likeNumber} pessoas</strong>
                 </div>
               </div>
             </div>
