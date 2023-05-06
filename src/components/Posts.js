@@ -6,7 +6,6 @@ export default function Posts() {
     { account: "barked", imgAvatar: "assets/img/barked.svg", altAvatar: "barked", imgPost: "assets/img/dog.svg", altPost: "dog", imgLike: "assets/img/adorable_animals.svg", altLike: "adorable_animals", accountLike: "adorable_animals", likeNumber: 523 },
   ]
 
-
   return (
     <div className="posts">
       {posts.map((post) => (
@@ -24,6 +23,7 @@ export default function Posts() {
     </div>
   );
 }
+
 function Post(props) {
   const [saved, setSaved] = useState("bookmark-outline")
   const [liked, setLiked] = useState("heart-outline")
@@ -54,16 +54,11 @@ function Post(props) {
     }
   }
 
-  function addLikeNumber(){
-    
-
-  }
-
   return (
-    <div onClick={likePostFromImage} data-test="post" className="post">
+    <div  data-test="post" className="post">
       <div className="topo">
         <div className="usuario">
-          <img data-test="post-image" src={props.avatarImage} alt={props.avatarAlt} />
+          <img  data-test="post-image" src={props.avatarImage} alt={props.avatarAlt} />
           {props.account}
         </div>
         <div className="acoes">
@@ -72,7 +67,7 @@ function Post(props) {
       </div>
 
       <div className="conteudo">
-        <img src={props.postImage} alt={props.postAlt} />
+        <img onClick={likePostFromImage} src={props.postImage} alt={props.postAlt} />
       </div>
 
       <div className="fundo">
@@ -95,7 +90,6 @@ function Post(props) {
         </div>
       </div>
     </div>
-
   )
 }
 
