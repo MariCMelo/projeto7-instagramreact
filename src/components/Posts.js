@@ -72,9 +72,9 @@ function Post(props) {
       </div>
 
       <div className="fundo">
-        <div className="acoes">
+        <div data-test="like-post" className="acoes">
           <div>
-          <ion-icon onClick={likePost} data-test="like-post" name={liked} style={{color: liked === 'heart' ? 'red' : 'black'}}></ion-icon>
+          <ion-icon onClick={likePost}  name={liked} style={{color: liked === 'heart' ? 'red' : 'black'}}></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>
@@ -85,8 +85,8 @@ function Post(props) {
 
         <div className="curtidas">
           <img src={props.likeImage} alt={props.likeAlt} />
-          <div className="texto">
-            Curtido por <strong>{props.accountLike}</strong> e <strong data-test="likes-number">outras {likeNumber} pessoas</strong>
+          <div data-test="likes-number" className="texto">
+            Curtido por <strong>{props.accountLike}</strong> e <strong >outras {likeNumber} pessoas</strong>
           </div>
         </div>
       </div>
