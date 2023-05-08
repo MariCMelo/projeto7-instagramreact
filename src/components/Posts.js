@@ -39,6 +39,7 @@ function Post(props) {
 
   function likePost() {
     if (liked === "heart-outline") {
+      
       setLiked("heart")
       setLikeNumber(likeNumber + 1)
     } else {
@@ -73,7 +74,7 @@ function Post(props) {
       <div className="fundo">
         <div className="acoes">
           <div>
-            <ion-icon onClick={likePost} data-test="like-post" name={liked}></ion-icon>
+          <ion-icon onClick={likePost} data-test="like-post" name={liked} style={{color: liked === 'heart' ? 'red' : 'black'}}></ion-icon>
             <ion-icon name="chatbubble-outline"></ion-icon>
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>
